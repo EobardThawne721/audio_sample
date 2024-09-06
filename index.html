@@ -1,1 +1,381 @@
-<h1>hello world</h1>
+<!doctype html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Audio Samples</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				max-width: 1000px;
+				margin: 0px auto;
+				padding: 20px;
+			}
+
+			h1,
+			h2 {
+				text-align: center;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				margin-top: 20px;
+				table-layout: fixed;
+			}
+
+			th,
+			td {
+				padding: 8px 4px;
+				text-align: center;
+				border: 1px solid #ddd;
+			}
+
+			th,
+			td:nth-child(2),
+			td:nth-child(3),
+			td:nth-child(4),
+			td:nth-child(5),
+			td:nth-child(6),
+			td:nth-child(7) {
+				width: 20%;
+			}
+
+			audio {
+				width: 100%;
+			}
+
+			.description {
+				font-size: 14px;
+				color: #555;
+				margin-bottom: 10px;
+			}
+
+			.system-title {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- 论文题目等信息 -->
+		<div style="background:#EAEAEA;color:#000;">
+			<center>
+				<h1>Emotional Audio Samples</h1>
+				<p>from <strong>论文题目</strong>, Accepted to 论文接收地方</p>
+				<p><strong>作者</strong></p>
+				<p>学校</p>
+			</center>
+		</div>
+
+
+
+		<!-- 第一节 -->
+		<div>
+			<h2>1. Emotional TTS Quality</h2>
+			<p class="description">
+				todo：描述话语，All the utterances are from <a href="#">ESD</a> speaker ID 0015.
+			</p>
+
+			<p class="description"><strong>GT :</strong> 真实录音<br>
+				<strong>MixedEmotion:</strong>方法的录音<br>
+				<strong>EmoDiff:</strong> 方法的录音<br>
+				<strong>ours:</strong> 方法的录音
+			</p>
+
+			<table>
+				<thead>
+					<tr>
+						<th>情绪</th>
+						<th>文本</th>
+						<th>真实录音</th>
+						<th>MixedEmotion</th>
+						<th>EmoDiff</th>
+						<th>ours</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="system-title">惊讶</td>
+						<td>Suppose I take grandmother a fresh vegetable.</td>
+						<td><audio controls>
+								<source src="wavs/esd0015/gt0015_001485surpirse.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/Mel_85_ref_Surprise_TTS.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/0015-Surprise_001485.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/惊讶情绪emo.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td class="system-title">开心</td>
+						<td>They found a cow grazing in a field.</td>
+						<td><audio controls>
+								<source src="wavs/esd0015/gt0015_000794happy.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/Mel_94_ref_Happy_TTS.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/0015-Happy_000794.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/开心情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td class="system-title">伤心</td>
+						<td>And what are doves. And what are doves.</td>
+						<td><audio controls>
+								<source src="wavs/esd0015/gt0015_001072sad.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/Mel_72_ref_Sad_TTS.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/0015-Sad_001072.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/伤心情绪emo.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td class="system-title">生气</td>
+						<td>Her shoes were like fishes.</td>
+						<td><audio controls>
+								<source src="wavs/esd0015/gt0015_000362angry.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/Mel_62_ref_Angry_TTS.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/0015-Angry_000362.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd0015/生气情绪emo.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<hr />
+		<!-- 第二节 -->
+		<div>
+			<h2>2. 情绪提取模型消融实验</h2>
+			<h3>2.1 数据集内部的情绪嵌入</h3>
+			<p class="description">
+				在保持相同模型架构、相同超参数的情况下、使用ESD情感数据集对模型迭代
+				80K step的情况下，将对于情感特征提取向量的嵌入用wav2vec2的wav2vec2-large
+				-robust-12-ft-emotion-msp-dim预训练模型和本文的emotion2vec预训练模型的对比实验。
+				所有的话语（包括情绪）都来自 <a href="#">ESD</a> speaker ID 0002.
+			</p>
+
+			<p class="description"><strong>情绪提示语音 :</strong> 真实情绪对应的录音<br>
+				<strong>wav2vec情感提取模型:</strong>方法的录音<br>
+				<strong>emotion2vce情感提取模型:</strong> 方法的录音<br>
+			</p>
+
+			<table>
+				<thead>
+					<tr>
+						<th>生成文本</th>
+						<th>情绪</th>
+						<th>情绪提示语音</th>
+						<th>wav2vec情感提取模型</th>
+						<th>emotion2vce情感提取模型</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>你深深地印在我的脑海里。</td>
+						<td class="system-title">惊讶</td>
+						<td><audio controls>
+								<source src="wavs/esd002/surpirse_0002_001467.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_surprise_wav2vec训练集以内的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_surprise_local训练集以内的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+
+						<td>你深深地印在我的脑海里。</td>
+						<td class="system-title">开心</td>
+						<td><audio controls>
+								<source src="wavs/esd002/happy_0002_000767.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_happy_wav2vec训练集以内的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_happy_local训练集以内的情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>你深深地印在我的脑海里。</td>
+						<td class="system-title">伤心</td>
+
+						<td><audio controls>
+								<source src="wavs/esd002/sad_0002_001117.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_sad_wav2vec训练集以内的情绪.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_sad_local训练集以内的情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>你深深地印在我的脑海里。</td>
+						<td class="system-title">生气</td>
+
+						<td><audio controls>
+								<source src="wavs/esd002/angry_0002_000417.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_angry_wav2vec训练集以内的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_angry_local训练集以内的情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>你深深地印在我的脑海里。</td>
+						<td class="system-title">中立</td>
+
+						<td><audio controls>
+								<source src="wavs/esd002/neural_0002_000067.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_neutral_wav2vec训练集以内的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_neutral_local训练集以内的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+		<!-- 第三节 -->
+		<div>
+			<h3>2.2 数据集以外的情绪嵌入</h3>
+			<p class="description">
+				保持与实验2.1相同的条件下，将两个情感识别预训练模型分别用于生成模型训练集中未见过的情感特征嵌入，测试其泛化能力。<br>所有的话语来自 <a href="#">ESD</a> speaker ID 0002.<br>情绪提示语音来自<a href="#">ESD</a> speaker ID 0001.
+			</p>
+
+			<p class="description"><strong>ESD-0001号情绪提示语音 :</strong> 真实情绪对应的录音<br>
+				<strong>wav2vec情感提取模型:</strong>方法的录音<br>
+				<strong>emotion2vce情感提取模型:</strong> 方法的录音<br>
+			</p>
+
+			<table>
+				<thead>
+					<tr>
+					<td colspan="5" style="text-align:center;font-weight:bold">生成文本：你深深地印在我的脑海里。</td>
+					</tr>
+					<tr>
+						<th>情绪提示文本</th>
+						<th>情绪</th>
+						<th>情绪提示语音</th>
+						<th>wav2vec情感提取模型</th>
+						<th>emotion2vce情感提取模型</th>
+					</tr>
+				
+				</thead>
+				<tbody>
+					<tr>
+						<td>没听清，请问什么时间提醒你。</td>
+						<td class="system-title">惊讶</td>
+						<td><audio controls>
+								<source src="wavs/esd002/surprise_0001_001431.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_surprise_wav2vec_prompt训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_surprise_prompt训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+
+						<td>我们乘船漂游了三峡，真是刺激。</td>
+						<td class="system-title">开心</td>
+						<td><audio controls>
+								<source src="wavs/esd002/happy_0001_000705.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_happy_wav2vec_prompt训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_happy_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>打远一看，它们的确很是美丽。</td>
+						<td class="system-title">伤心</td>
+
+						<td><audio controls>
+								<source src="wavs/esd002/sad_0001_001051.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_sad_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_sad_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>姐忙得很，没空和你说这个。</td>
+						<td class="system-title">生气</td>
+
+						<td><audio controls>
+								<source src="wavs/esd002/angry_0001_000391.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_angry_wav2vec_prompt_训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_angry_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>打远一看，它们的确很是美丽。</td>
+						<td class="system-title">中立</td>
+
+						<td><audio controls>
+								<source src="wavs/esd002/neural_0001_000001.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_neutral_wav2vec_prompt训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_neutral_prompt训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+	</body>
+</html>
