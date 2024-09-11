@@ -72,17 +72,17 @@
 
 		<!-- 第一节 -->
 		<div class="chapter1">
-				<h2>1. Emotion Conversion Comparison</h2>
-				<p class="description">
+				<h2>1. Emotion Conversion Comparison(ESD-0015)</h2>
+				<!--<p class="description">
 					 We compared the performance of text-to-speech and emotion conversion with baseline approaches.
 					All the utterances are from <a href="https://github.com/HLTSingapore/Emotional-Speech-Data/">ESD</a> speaker ID 0015.
-				</p>
+				</p> -->
 
 			<p class="description"><strong>GT :</strong> Ground truth.<br>
 				<strong>MixedEmotion :</strong>Proposed in <a href="https://arxiv.org/abs/2208.05890">this paper</a>.<br>
 				<strong>EmoDiff :</strong> Proposed in <a href="https://arxiv.org/pdf/2211.09496v2.pdf">this paper</a>.<br>
-				<strong>ours :</strong> Proposed a method for synthesizing emotional speech through pre-trained embeddings 
-				and multiple generative models. 
+				<!--<strong>ours :</strong> Proposed a method for synthesizing emotional speech through pre-trained embeddings 
+				and multiple generative models. -->
 			</p>
 
 			<table>
@@ -93,7 +93,7 @@
 						<th>GT</th>
 						<th>MixedEmotion</th>
 						<th>EmoDiff</th>
-						<th>ours</th>
+						<th>Ours</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -238,25 +238,30 @@
 
 		<!-- 第二节 -->
 		<div class="chapter2">
-			<h2>2. Pre-trained E2V、W2V Comparison</h2>
+			<h2>2. Comparison of texts with different lengths</h2>
 			<p class="description">
-				In this experiment, we extract utterances of varying lengths from the
+				<!--In this experiment, we extract utterances of varying lengths from the
 				first chapter of 《The Lord of the Rings》to synthesize speech. In the ESD training dataset, 
 				the maximum input character length does not exceed 150. 
 				By continuously increasing the length of the text, we aim to verify the model's robustness 
-				in generating long texts.
+				in generating long texts. -->
+In the ESD training dataset, the maximum input character length does not exceed 150, so we extract utterances of varying lengths from the first chapter of 《The Lord of the Rings》to synthesize speech. 
+By continuously increasing the length of the text, we aim to verify the model's robustness in generating long texts.  
+
 			</p>
 
 			<h3>out-of-domain emotions 1</h3>
 			<p class="description">
-					We use fine-tuned wav2vec2 (w2v) and emotion2vec (e2v) models to extract out-of-domain emotional features 
+We use fine-tuned <a  href="https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim">wav2vec2</a> (W2V) and <a href="https://github.com/ddlBoJack/emotion2vec">emotion2vec</a> (E2V) models to extract out-of-domain emotional features as embeddings features, enabling the model to generate speech with different emotions. 
+
+					<!--We use fine-tuned wav2vec2 (w2v) and emotion2vec (e2v) models to extract out-of-domain emotional features 
 					as embeddings, enabling the model to generate emotion-specific long texts. 
 					The synthesized speech is downsampled to 16kHz and processed using the
 					 <a href="https://huggingface.co/facebook/wav2vec2-large-960h">wav2vec2-large-960h </a> 
 					automatic speech recognition model. 
 					We then calculate the Word Error Rate (WER) and Character Error Rate (CER) 
 					between the generated and ground truth texts.
-				<ul class="description">
+				<!-- <ul class="description">
 					<li><a style="font-size: 15px;" href="https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim">
 					w2v</a> : The model was created by fine-tuning Wav2Vec2-Large-Robust on MSP-Podcast (v1.7). 
 					The model was pruned from 24 to 12 transformer layers before fine-tuning...</li>
@@ -264,7 +269,7 @@
 					 Self-Supervised Pre-Training for Speech Emotion Representation,aiming to train a "whisper" 
 					 model that overcomes the effects of language and recording environments 
 					 through data-driven approaches, achieving universal and robust emotion recognition capabilities...</li>
-				</ul>
+				</ul> -->
 			</p>
 			<div>
 				<center> 
@@ -274,19 +279,19 @@
 
 				<div class="wer-cer-text">
 					<p class="system-title">
-						str_200 = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
+						200 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
 						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
 						his travel"
 					</p>
 					<p class="system-title">
-						str_400 = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
+						400 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
 						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
 						his travels had now become a local legend, and it was popularly believed, whatever the old folk
 						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
 						enough for fame"
 					</p>
 					<p class="system-title">
-						str_600 = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
+						600 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
 						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
 						his travels had now become a local legend, and it was popularly believed, whatever the old folk
 						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
@@ -295,7 +300,7 @@
 						began to call him"
 					</p>
 					<p class="system-title">
-						str_800 = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
+						800 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
 						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
 						his travels had now become a local legend, and it was popularly believed, whatever the old folk
 						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
@@ -480,15 +485,18 @@
 
 		<!-- 第三节 -->
 		<div class="chapter2-2">
-			<h3>out-of-domain emotions 2</h3>
+			<h3>Comparison of different emotions </h3>
 			<p class="description">
-					In this experiment, we will generate Chinese speech in five different emotions, 
+					<!--In this experiment, we will generate Chinese speech in five different emotions, 
 					with each emotion extracting out-of-domain emotional features as embeddings. 
 					All utterances are from ESD speaker ID 0002, and all emotion prompt speech 
-					is from ESD speaker ID 0001.
+					is from ESD speaker ID 0001.-->
+
+				We convert 5 emotions From ESD-0001 to ESD-0002. The TTS text is in Chinese: '你深深地印在我的脑海里.'
+
 			</p>
 
-			<p class="description"><strong>Emotion prompt speech:</strong> The real emotion recordings from ESD speaker ID 0001<br>
+			<p class="description"><strong>Emotional Speech (ESD-0001):</strong> The real emotion recordings from ESD speaker ID 0001<br>
 			</p>
 
 			<table>
@@ -497,9 +505,9 @@
 						<td colspan="5" style="text-align:center;font-weight:bold">Generated text：你深深地印在我的脑海里。</td>
 					</tr>
 					<tr>
-						<th>Emotion prompt text</th>
+						<th>Text</th>
 						<th>Emotion</th>
-						<th>Emotion prompt speech</th>
+						<th>Emotional Speech (ESD-0001)</th>
 						<th>W2V</th>
 						<th>E2V</th>
 					</tr>
@@ -594,18 +602,19 @@
 
 		<!-- 第四节 -->
 		<div>
-			<h2>3.TTS</h2>
+			<h2>3.TTS Comparison</h2>
 			<p class="description">
-				In this section, we conducted a TTS comparison test between the unofficially implemented <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> model and our own model. 
-				The generated speech for both trained datasets was based on text with a length of 800 characters from 《The Lord of the Rings》.
+				<!--In this section, we conducted a TTS comparison test between the unofficially implemented <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> model and our own model. 
+				The generated speech for both trained datasets was based on text with a length of 800 characters from 《The Lord of the Rings》.-->
+				A TTS comparison between <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> and our method. 
 			</p>
 			
 				<table>
 					<thead>
 						<tr>
 							<th>Datasets</th>
-							<th>vits2</th>
-							<th>ours</th>
+							<th>VITS2</th>
+							<th>Ours</th>
 						</tr>
 					</thead>
 
