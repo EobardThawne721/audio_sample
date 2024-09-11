@@ -247,7 +247,7 @@
 				in generating long texts.
 			</p>
 
-			<h3>out-of-domain emotions</h3>
+			<h3>out-of-domain emotions 1</h3>
 			<p class="description">
 					We use fine-tuned wav2vec2 (w2v) and emotion2vec (e2v) models to extract out-of-domain emotional features 
 					as embeddings, enabling the model to generate emotion-specific long texts. 
@@ -479,36 +479,68 @@
 
 
 		<!-- 第三节 -->
-		<!-- <div>
-			<h3>2.2 数据集以外的情绪嵌入</h3>
+		<div class="chapter2-2">
+			<h3>out-of-domain emotions 2</h3>
 			<p class="description">
-				保持与实验2.1相同的条件下，将两个情感识别预训练模型分别用于生成模型训练集中未见过的情感特征嵌入，测试其泛化能力。<br>所有的话语来自 <a href="#">ESD</a> speaker ID
-				0002.<br>情绪提示语音来自<a href="#">ESD</a> speaker ID 0001.
+					In this experiment, we will generate Chinese speech in five different emotions, 
+					with each emotion extracting out-of-domain emotional features as embeddings. 
+					All utterances are from ESD speaker ID 0002, and all emotion prompt speech 
+					is from ESD speaker ID 0001.
 			</p>
 
-			<p class="description"><strong>ESD-0001号情绪提示语音 :</strong> 真实情绪对应的录音<br>
-				<strong>wav2vec情感提取模型:</strong>方法的录音<br>
-				<strong>emotion2vce情感提取模型:</strong> 方法的录音<br>
+			<p class="description"><strong>Emotion prompt speech:</strong> The real emotion recordings from ESD speaker ID 0001<br>
 			</p>
 
 			<table>
 				<thead>
 					<tr>
-						<td colspan="5" style="text-align:center;font-weight:bold">生成文本：你深深地印在我的脑海里。</td>
+						<td colspan="5" style="text-align:center;font-weight:bold">Generated text：你深深地印在我的脑海里。</td>
 					</tr>
 					<tr>
-						<th>情绪提示文本</th>
-						<th>情绪</th>
-						<th>情绪提示语音</th>
-						<th>wav2vec情感提取模型</th>
-						<th>emotion2vce情感提取模型</th>
+						<th>Emotion prompt text</th>
+						<th>Emotion</th>
+						<th>Emotion prompt speech</th>
+						<th>W2V</th>
+						<th>E2V</th>
 					</tr>
 
 				</thead>
 				<tbody>
+					
+					<tr>
+						<td>打远一看，它们的确很是美丽。</td>
+						<td class="system-title">Sad</td>
+					
+						<td><audio controls>
+								<source src="wavs/esd002/sad_0001_001051.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_sad_wav2vec_prompt训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_sad_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>姐忙得很，没空和你说这个。</td>
+						<td class="system-title">Angry</td>
+					
+						<td><audio controls>
+								<source src="wavs/esd002/angry_0001_000391.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_angry_wav2vec_prompt_训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/e2v/gen_0002_000371_angry_prompt训练集以外的情绪.wav"
+									type="audio/mpeg">
+							</audio></td>
+					</tr>
 					<tr>
 						<td>没听清，请问什么时间提醒你。</td>
-						<td class="system-title">惊讶</td>
+						<td class="system-title">Surprise</td>
 						<td><audio controls>
 								<source src="wavs/esd002/surprise_0001_001431.wav" type="audio/mpeg">
 							</audio></td>
@@ -524,7 +556,7 @@
 					<tr>
 
 						<td>我们乘船漂游了三峡，真是刺激。</td>
-						<td class="system-title">开心</td>
+						<td class="system-title">Happy</td>
 						<td><audio controls>
 								<source src="wavs/esd002/happy_0001_000705.wav" type="audio/mpeg">
 							</audio></td>
@@ -537,40 +569,10 @@
 									type="audio/mpeg">
 							</audio></td>
 					</tr>
+					
 					<tr>
 						<td>打远一看，它们的确很是美丽。</td>
-						<td class="system-title">伤心</td>
-
-						<td><audio controls>
-								<source src="wavs/esd002/sad_0001_001051.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/w2v/gen_0002_000371_sad_wav2vec_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/e2v/gen_0002_000371_sad_prompt训练集以外的情绪.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
-						<td>姐忙得很，没空和你说这个。</td>
-						<td class="system-title">生气</td>
-
-						<td><audio controls>
-								<source src="wavs/esd002/angry_0001_000391.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/w2v/gen_0002_000371_angry_wav2vec_prompt_训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/e2v/gen_0002_000371_angry_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
-						<td>打远一看，它们的确很是美丽。</td>
-						<td class="system-title">中立</td>
+						<td class="system-title">Neutral</td>
 
 						<td><audio controls>
 								<source src="wavs/esd002/neural_0001_000001.wav" type="audio/mpeg">
@@ -586,12 +588,59 @@
 					</tr>
 				</tbody>
 			</table>
+				<hr />
 		</div>
-		<hr /> -->
+	
 
 		<!-- 第四节 -->
 		<div>
 			<h2>3.TTS</h2>
+			<p class="description">
+				In this section, we conducted a TTS comparison test between the unofficially implemented <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> model and our own model. 
+				The generated speech for both trained datasets was based on text with a length of 800 characters from 《The Lord of the Rings》.
+			</p>
+			
+				<table>
+					<thead>
+						<tr>
+							<th>Datasets</th>
+							<th>vits2</th>
+							<th>ours</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="system-title">LJSpeech</td>
+							<td>
+								<audio controls>
+									<source src="wavs/tts/vits2 800.wav" type="audio/mpeg">
+								</audio>
+							</td>
+							<td>
+								<audio controls>
+									<source src="wavs/tts/our 800.wav" type="audio/mpeg">
+								</audio>
+							</td>
+						</tr>
+						<tr>
+							<td class="system-title">VCTK</td>
+							<td>
+								<audio controls>
+									<source src="wavs/tts/vits2 10  836.wav" type="audio/mpeg">
+								</audio>
+							</td>
+							<td>
+								<audio controls>
+									<source src="wavs/tts/ours_10 836.wav" type="audio/mpeg">
+								</audio>
+							</td>
+						</tr>
+				
+					</tbody>
+				</table>
+
+				
 
 		</div>
 
