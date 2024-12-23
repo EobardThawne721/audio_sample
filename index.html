@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="zh">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Audio Samples</title>
-		<style>
-			body {
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Audio Samples</title>
+	<style>
+		body {
 				font-family: Arial, sans-serif;
 				max-width: 1550px;
 				margin: 0px auto;
@@ -56,205 +57,247 @@
 				font-weight: bold;
 			}
 		</style>
-	</head>
-	<body>
+</head>
 
-		<!-- 论文题目等信息 -->
-		<!-- 	<div style="background:#EAEAEA;color:#000;">
-			<center>
-				<h1>Emotional Audio Samples</h1>
-				<p>from <strong>Emotion Convertible Text to Speech via Pre-trained Embedding and Multiple Generative Models</strong>, Accepted to 论文接收地方</p>
-				<p><strong>作者</strong></p>
-				<p>Chongqing University of Technology，China</p>
-			</center>
-		</div> -->
+<body>
 
-
-		<!-- 第一节 -->
-		<div class="chapter1">
-				<h2>1. Emotion Conversion Comparison(ESD-0015)</h2>
-				<!--<p class="description">
+	<!-- 第一节 -->
+	<div class="chapter1">
+		<h2>1. Emotion Conversion Comparison(ESD-0015)</h2>
+		<!--<p class="description">
 					 We compared the performance of text-to-speech and emotion conversion with baseline approaches.
 					All the utterances are from <a href="https://github.com/HLTSingapore/Emotional-Speech-Data/">ESD</a> speaker ID 0015.
 				</p> -->
 
-			<p class="description"><strong>GT :</strong> Ground truth.<br>
-				<strong>MixedEmotion :</strong>Proposed in <a href="https://arxiv.org/abs/2208.05890">this paper</a>.<br>
-				<strong>EmoDiff :</strong> Proposed in <a href="https://arxiv.org/pdf/2211.09496v2.pdf">this paper</a>.<br>
-				<!--<strong>ours :</strong> Proposed a method for synthesizing emotional speech through pre-trained embeddings 
+		<p class="description"><strong>GT :</strong> Ground truth.<br>
+			<strong>MixedEmotion :</strong>Proposed in <a href="https://arxiv.org/abs/2208.05890">this paper</a>.<br>
+			<strong>EmoDiff :</strong> Proposed in <a href="https://arxiv.org/pdf/2211.09496v2.pdf">this paper</a>.<br>
+			<!--<strong>ours :</strong> Proposed a method for synthesizing emotional speech through pre-trained embeddings 
 				and multiple generative models. -->
-			</p>
+		</p>
 
-			<table>
-				<thead>
-					<tr>
-						<th>Emotions</th>
-						<th>Text</th>
-						<th>GT</th>
-						<th>MixedEmotion</th>
-						<th>EmoDiff</th>
-						<th>Ours</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="system-title">Surprise-1</td>
-						<td>Suppose I take grandmother a fresh vegetable.</td>
-						<td><audio controls>
-								<source src="wavs/esd0015/gt0015_001485surpirse.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/Mel_85_ref_Surprise_TTS.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015-Surprise_001485.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/惊讶情绪emo.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
-						<td class="system-title">Surprise-2</td>
-						<td>Tom now let our arrows fly!</td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015_001470惊讶的fly.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/Mel_70_ref_Surprise_TTS.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015-Surprise_001470.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/惊讶x4段.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
-						<td class="system-title">Surprise-3</td>
-						<td>Her shoes were like fishes.</td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015_001412.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/Mel_12_ref_Surprise_TTS.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015-Surprise_001412.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/惊喜2x4段.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
+		<table>
+			<thead>
+				<tr>
+					<th>Emotions</th>
+					<th>Text</th>
+					<th>GT</th>
+					<th>MixedEmotion</th>
+					<th>EmoDiff</th>
+					<th>Ours(1 emo embeddings)</th>
+					<th>Ours(2 emo embeddings)</th>
+					<th>Ours(label control)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="system-title">Surprise-1</td>
+					<td>Suppose I take grandmother a fresh vegetable.</td>
+					<td><audio controls>
+							<source src="wavs/esd0015/gt0015_001485surpirse.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/Mel_85_ref_Surprise_TTS.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015-Surprise_001485.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/惊讶情绪emo.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_2emo/Suppose I take grandmother a fresh vegetable.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_label/Suppose I take grandmother a fresh vegetable.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+				<tr>
+					<td class="system-title">Surprise-2</td>
+					<td>Tom now let our arrows fly!</td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015_001470惊讶的fly.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/Mel_70_ref_Surprise_TTS.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015-Surprise_001470.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/惊讶x4段.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<!-- <source src="wavs/esd0015/惊讶x4段.wav" type="audio/mpeg"> -->
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_label/Tom now let our arrows fly.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+				<tr>
+					<td class="system-title">Surprise-3</td>
+					<td>Her shoes were like fishes.</td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015_001412.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/Mel_12_ref_Surprise_TTS.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015-Surprise_001412.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/惊喜2x4段.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<!-- <source src="wavs/esd0015/惊喜2x4段.wav" type="audio/mpeg"> -->
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_label/Her shoes were like fishes(惊讶情绪).wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
 
-					<tr>
-						<td class="system-title">Happy-1</td>
-						<td>They found a cow grazing in a field.</td>
-						<td><audio controls>
-								<source src="wavs/esd0015/gt0015_000794happy.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/Mel_94_ref_Happy_TTS.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015-Happy_000794.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/开心情绪.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
-						<td class="system-title">Happy-2</td>
-						<td>Her shoes were like fishes.</td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015_000712.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/Mel_12_ref_Happy_TTS.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015-Happy_000712.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/开心x4段.wav" type="audio/mpeg">
-							</audio></td>
+				<tr>
+					<td class="system-title">Happy-1</td>
+					<td>They found a cow grazing in a fields.</td>
+					<td><audio controls>
+							<source src="wavs/esd0015/gt0015_000794happy.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/Mel_94_ref_Happy_TTS.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015-Happy_000794.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/开心情绪.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_2emo/They found a cow grazing in a field.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_label/They found a cow grazing in a field.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+				<tr>
+					<td class="system-title">Happy-2</td>
+					<td>Her shoes were like fishes.</td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015_000712.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/Mel_12_ref_Happy_TTS.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015-Happy_000712.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/开心x4段.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<!-- <source src="wavs/esd0015/开心x4段.wav" type="audio/mpeg"> -->
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_label/Her shoes were like fishes(开心情绪).wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+				<tr>
+					<td class="system-title">Sad-1</td>
+					<td>And what are doves. And what are doves.</td>
+					<td><audio controls>
+							<source src="wavs/esd0015/gt0015_001072sad.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/Mel_72_ref_Sad_TTS.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015-Sad_001072.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/伤心情绪emo.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_2emo/And what are doves. And what are doves.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_label/And what are doves. And what are doves.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+				<tr>
+					<td class="system-title">Angry-1</td>
+					<td>Her shoes were like fishes.</td>
+					<td><audio controls>
+							<source src="wavs/esd0015/gt0015_000362angry.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/Mel_62_ref_Angry_TTS.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015-Angry_000362.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/生气情绪emo.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_2emo/Her shoes were like fishes.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_label/Her shoes were like fishes.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
 
-					</tr>
-					<tr>
-						<td class="system-title">Sad-1</td>
-						<td>And what are doves. And what are doves.</td>
-						<td><audio controls>
-								<source src="wavs/esd0015/gt0015_001072sad.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/Mel_72_ref_Sad_TTS.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015-Sad_001072.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/伤心情绪emo.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
-						<td class="system-title">Angry-1</td>
-						<td>Her shoes were like fishes.</td>
-						<td><audio controls>
-								<source src="wavs/esd0015/gt0015_000362angry.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/Mel_62_ref_Angry_TTS.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015-Angry_000362.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/生气情绪emo.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
+				<tr>
+					<td class="system-title">Angry-2</td>
+					<td>They went up to the dark mass job had pointed out.</td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015_000354.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/Mel_54_ref_Angry_TTS.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/0015-Angry_000354.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd0015/生气x4段.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<!-- <source src="wavs/esd0015/生气x4段.wav" type="audio/mpeg"> -->
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/ESD0015_label/They went up to the dark mass job had pointed out.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+			</tbody>
+		</table>
 
-					<tr>
-						<td class="system-title">Angry-2</td>
-						<td>They went up to the dark mass job had pointed out.</td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015_000354.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/Mel_54_ref_Angry_TTS.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/0015-Angry_000354.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd0015/生气x4段.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<hr />
-		</div>
+		<hr />
+	</div>
 
 
 
-		<!-- 第二节 -->
-		<div class="chapter2">
-			<h2>2. Comparison of texts with different lengths</h2>
-			<p class="description">
-				<!--In this experiment, we extract utterances of varying lengths from the
+	<!-- 第二节 -->
+	<div class="chapter2">
+		<h2>2. Comparison of texts with different lengths</h2>
+		<p class="description">
+			<!--In this experiment, we extract utterances of varying lengths from the
 				first chapter of 《The Lord of the Rings》to synthesize speech. In the ESD training dataset, 
 				the maximum input character length does not exceed 150. 
 				By continuously increasing the length of the text, we aim to verify the model's robustness 
 				in generating long texts. -->
-In the ESD training dataset, the maximum input character length does not exceed 150, so we extract utterances of varying lengths from the first chapter of 《The Lord of the Rings》to synthesize speech. 
-By continuously increasing the length of the text, we aim to verify the model's robustness in generating long texts.  
+			In the ESD training dataset, the maximum input character length does not exceed 150, so we extract utterances of
+			varying lengths from the first chapter of 《The Lord of the Rings》to synthesize speech.
+			By continuously increasing the length of the text, we aim to verify the model's robustness in generating long texts.
 
-			</p>
+		</p>
 
-			<!--<h3>out-of-domain emotions 1</h3>-->
-			<p class="description">
-We use fine-tuned <a  href="https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim">wav2vec2</a> (W2V) and <a href="https://github.com/ddlBoJack/emotion2vec">emotion2vec</a> (E2V) models to extract out-of-domain emotional features as embeddings features, enabling the model to generate speech with different emotions. 
+		<!--<h3>out-of-domain emotions 1</h3>-->
+		<p class="description">
+			We use fine-tuned <a href="https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim">wav2vec2</a>
+			(W2V) and <a href="https://github.com/ddlBoJack/emotion2vec">emotion2vec</a> (E2V) models to extract out-of-domain
+			emotional features as embeddings features, enabling the model to generate speech with different emotions.
 
-					<!--We use fine-tuned wav2vec2 (w2v) and emotion2vec (e2v) models to extract out-of-domain emotional features 
+			<!--We use fine-tuned wav2vec2 (w2v) and emotion2vec (e2v) models to extract out-of-domain emotional features 
 					as embeddings, enabling the model to generate emotion-specific long texts. 
 					The synthesized speech is downsampled to 16kHz and processed using the
 					 <a href="https://huggingface.co/facebook/wav2vec2-large-960h">wav2vec2-large-960h </a> 
@@ -270,122 +313,122 @@ We use fine-tuned <a  href="https://huggingface.co/audeering/wav2vec2-large-robu
 					 model that overcomes the effects of language and recording environments 
 					 through data-driven approaches, achieving universal and robust emotion recognition capabilities...</li>
 				</ul> -->
-			</p>
-			<div>
-				<center> 
-					<img src="wavs//e2v&w2v/chapter1.jpg" style="width: 350px;height: 400px;" />
-					<img src="wavs//e2v&w2v/pic.jpg" style="width: 350px;height: 400px;" />
-				</center>
+		</p>
+		<div>
+			<center>
+				<img src="wavs//e2v&w2v/chapter1.jpg" style="width: 350px;height: 400px;" />
+				<img src="wavs//e2v&w2v/pic.jpg" style="width: 350px;height: 400px;" />
+			</center>
 
-				<div class="wer-cer-text">
-					<p class="system-title">
-						200 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
-						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
-						his travel"
-					</p>
-					<p class="system-title">
-						400 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
-						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
-						his travels had now become a local legend, and it was popularly believed, whatever the old folk
-						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
-						enough for fame"
-					</p>
-					<p class="system-title">
-						600 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
-						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
-						his travels had now become a local legend, and it was popularly believed, whatever the old folk
-						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
-						enough for fame, there was also his prolonged vigour to marvel at. Time were on, but it seemed to
-						have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they
-						began to call him"
-					</p>
-					<p class="system-title">
-						800 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
-						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
-						his travels had now become a local legend, and it was popularly believed, whatever the old folk
-						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
-						enough for fame, there was also his prolonged vigour to marvel at. Time were on, but it seemed to
-						have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they
-						began to call him well-preserved, but unchanged would have been nearer the mark. There were some
-						that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone
-						should possess paper"
-					</p>
-				</div>
-				<table>
-					<thead>
-						<tr>
-							<th>Length(chars)</th>
-							<th>W2V</th>
-							<th>E2V</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-							<td class="system-title">200</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v/w2v_200.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v/e2v_200.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-						<tr>
-							<td class="system-title">400</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v/w2v_400.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v/e2v_400.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-						<tr>
-							<td class="system-title">600</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v/w2v_600.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v/e2v_600.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-						<tr>
-							<td class="system-title">800</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v/w2v_800.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v/e2v_800.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-				
-
-				
-				<hr />
+			<div class="wer-cer-text">
+				<p class="system-title">
+					200 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
+					ever since his remarkable disappearance and unexpected return, The riches he had brought back from
+					his travel"
+				</p>
+				<p class="system-title">
+					400 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
+					ever since his remarkable disappearance and unexpected return, The riches he had brought back from
+					his travels had now become a local legend, and it was popularly believed, whatever the old folk
+					might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
+					enough for fame"
+				</p>
+				<p class="system-title">
+					600 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
+					ever since his remarkable disappearance and unexpected return, The riches he had brought back from
+					his travels had now become a local legend, and it was popularly believed, whatever the old folk
+					might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
+					enough for fame, there was also his prolonged vigour to marvel at. Time were on, but it seemed to
+					have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they
+					began to call him"
+				</p>
+				<p class="system-title">
+					800 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
+					ever since his remarkable disappearance and unexpected return, The riches he had brought back from
+					his travels had now become a local legend, and it was popularly believed, whatever the old folk
+					might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
+					enough for fame, there was also his prolonged vigour to marvel at. Time were on, but it seemed to
+					have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they
+					began to call him well-preserved, but unchanged would have been nearer the mark. There were some
+					that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone
+					should possess paper"
+				</p>
 			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>Length(chars)</th>
+						<th>W2V</th>
+						<th>E2V</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td class="system-title">200</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v/w2v_200.wav" type="audio/mpeg">
+							</audio>
+						</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v/e2v_200.wav" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td class="system-title">400</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v/w2v_400.wav" type="audio/mpeg">
+							</audio>
+						</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v/e2v_400.wav" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td class="system-title">600</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v/w2v_600.wav" type="audio/mpeg">
+							</audio>
+						</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v/e2v_600.wav" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td class="system-title">800</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v/w2v_800.wav" type="audio/mpeg">
+							</audio>
+						</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v/e2v_800.wav" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
 
 
 
-			<!-- 	<h3>2.1 数据集内部的情绪嵌入</h3>
+			<hr />
+		</div>
+
+
+
+
+		<!-- 	<h3>2.1 数据集内部的情绪嵌入</h3>
 			<p class="description"><strong>情绪提示语音 :</strong> 真实情绪对应的录音<br>
 				<strong>wav2vec情感提取模型:</strong>方法的录音<br>
 				<strong>emotion2vce情感提取模型:</strong> 方法的录音<br>
@@ -479,180 +522,173 @@ We use fine-tuned <a  href="https://huggingface.co/audeering/wav2vec2-large-robu
 				</tbody>
 			</table>
 			<hr /> -->
-		</div>
+	</div>
 
 
 
-		<!-- 第三节 -->
-		<div class="chapter2-2">
-			<h3>Comparison of different emotions </h3>
-			<p class="description">
-					<!--In this experiment, we will generate Chinese speech in five different emotions, 
+	<!-- 第三节 -->
+	<div class="chapter2-2">
+		<h3>Comparison of different emotions </h3>
+		<p class="description">
+			<!--In this experiment, we will generate Chinese speech in five different emotions, 
 					with each emotion extracting out-of-domain emotional features as embeddings. 
 					All utterances are from ESD speaker ID 0002, and all emotion prompt speech 
 					is from ESD speaker ID 0001.-->
 
-				We convert 5 emotions From ESD-0001 to ESD-0002. The TTS text is in Chinese: '你深深地印在我的脑海里.'
+			We convert 5 emotions From ESD-0001 to ESD-0002. The TTS text is in Chinese: '你深深地印在我的脑海里.'
 
-			</p>
+		</p>
 
-			<p class="description"><strong>Emotional Speech (ESD-0001):</strong> The real emotion recordings from ESD speaker ID 0001<br>
-			</p>
+		<p class="description"><strong>Emotional Speech (ESD-0001):</strong> The real emotion recordings from ESD speaker ID
+			0001<br>
+		</p>
 
-			<table>
-				<thead>
-					<tr>
-						<td colspan="5" style="text-align:center;font-weight:bold">Generated text：你深深地印在我的脑海里。</td>
-					</tr>
-					<tr>
-						<th>Text</th>
-						<th>Emotion</th>
-						<th>Emotional Speech (ESD-0001)</th>
-						<th>W2V</th>
-						<th>E2V</th>
-					</tr>
+		<table>
+			<thead>
+				<tr>
+					<td colspan="5" style="text-align:center;font-weight:bold">Generated text：你深深地印在我的脑海里。</td>
+				</tr>
+				<tr>
+					<th>Text</th>
+					<th>Emotion</th>
+					<th>Emotional Speech (ESD-0001)</th>
+					<th>W2V</th>
+					<th>E2V</th>
+				</tr>
 
-				</thead>
-				<tbody>
-					
-					<tr>
-						<td>打远一看，它们的确很是美丽。</td>
-						<td class="system-title">Sad</td>
-					
-						<td><audio controls>
-								<source src="wavs/esd002/sad_0001_001051.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/w2v/gen_0002_000371_sad_wav2vec_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/e2v/gen_0002_000371_sad_prompt训练集以外的情绪.wav" type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
-						<td>姐忙得很，没空和你说这个。</td>
-						<td class="system-title">Angry</td>
-					
-						<td><audio controls>
-								<source src="wavs/esd002/angry_0001_000391.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/w2v/gen_0002_000371_angry_wav2vec_prompt_训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/e2v/gen_0002_000371_angry_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
-						<td>没听清，请问什么时间提醒你。</td>
-						<td class="system-title">Surprise</td>
-						<td><audio controls>
-								<source src="wavs/esd002/surprise_0001_001431.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/w2v/gen_0002_000371_surprise_wav2vec_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/e2v/gen_0002_000371_surprise_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-					</tr>
-					<tr>
+			</thead>
+			<tbody>
 
-						<td>我们乘船漂游了三峡，真是刺激。</td>
-						<td class="system-title">Happy</td>
-						<td><audio controls>
-								<source src="wavs/esd002/happy_0001_000705.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/w2v/gen_0002_000371_happy_wav2vec_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/e2v/gen_0002_000371_happy_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-					</tr>
-					
-					<tr>
-						<td>打远一看，它们的确很是美丽。</td>
-						<td class="system-title">Neutral</td>
+				<tr>
+					<td>打远一看，它们的确很是美丽。</td>
+					<td class="system-title">Sad</td>
 
-						<td><audio controls>
-								<source src="wavs/esd002/neural_0001_000001.wav" type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/w2v/gen_0002_000371_neutral_wav2vec_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-						<td><audio controls>
-								<source src="wavs/esd002/e2v/gen_0002_000371_neutral_prompt训练集以外的情绪.wav"
-									type="audio/mpeg">
-							</audio></td>
-					</tr>
-				</tbody>
-			</table>
-				<hr />
-		</div>
-	
+					<td><audio controls>
+							<source src="wavs/esd002/sad_0001_001051.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/w2v/gen_0002_000371_sad_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/e2v/gen_0002_000371_sad_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+				<tr>
+					<td>姐忙得很，没空和你说这个。</td>
+					<td class="system-title">Angry</td>
 
-		<!-- 第四节 -->
-		<div>
-			<h2>3.TTS Comparison</h2>
-			<p class="description">
-				<!--In this section, we conducted a TTS comparison test between the unofficially implemented <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> model and our own model. 
+					<td><audio controls>
+							<source src="wavs/esd002/angry_0001_000391.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/w2v/gen_0002_000371_angry_wav2vec_prompt_训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/e2v/gen_0002_000371_angry_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+				<tr>
+					<td>没听清，请问什么时间提醒你。</td>
+					<td class="system-title">Surprise</td>
+					<td><audio controls>
+							<source src="wavs/esd002/surprise_0001_001431.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/w2v/gen_0002_000371_surprise_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/e2v/gen_0002_000371_surprise_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+				<tr>
+
+					<td>我们乘船漂游了三峡，真是刺激。</td>
+					<td class="system-title">Happy</td>
+					<td><audio controls>
+							<source src="wavs/esd002/happy_0001_000705.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/w2v/gen_0002_000371_happy_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/e2v/gen_0002_000371_happy_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+
+				<tr>
+					<td>打远一看，它们的确很是美丽。</td>
+					<td class="system-title">Neutral</td>
+
+					<td><audio controls>
+							<source src="wavs/esd002/neural_0001_000001.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/w2v/gen_0002_000371_neutral_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+					<td><audio controls>
+							<source src="wavs/esd002/e2v/gen_0002_000371_neutral_prompt训练集以外的情绪.wav" type="audio/mpeg">
+						</audio></td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+	</div>
+
+
+	<!-- 第四节 -->
+	<div>
+		<h2>3.TTS Comparison</h2>
+		<p class="description">
+			<!--In this section, we conducted a TTS comparison test between the unofficially implemented <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> model and our own model. 
 				The generated speech for both trained datasets was based on text with a length of 800 characters from 《The Lord of the Rings》.-->
-				A TTS comparison between <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> and our method. 
-			</p>
-			
-				<table>
-					<thead>
-						<tr>
-							<th>Datasets</th>
-							<th>VITS2</th>
-							<th>Ours</th>
-						</tr>
-					</thead>
+			A TTS comparison between <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> and our method.
+		</p>
 
-					<tbody>
-						<tr>
-							<td class="system-title">LJSpeech</td>
-							<td>
-								<audio controls>
-									<source src="wavs/tts/vits2 800.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/tts/our 800.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-						<tr>
-							<td class="system-title">VCTK</td>
-							<td>
-								<audio controls>
-									<source src="wavs/tts/vits2 10  836.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/tts/ours_10 836.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-				
-					</tbody>
-				</table>
+		<table>
+			<thead>
+				<tr>
+					<th>Datasets</th>
+					<th>VITS2</th>
+					<th>Ours</th>
+				</tr>
+			</thead>
 
-				
+			<tbody>
+				<tr>
+					<td class="system-title">LJSpeech</td>
+					<td>
+						<audio controls>
+							<source src="wavs/tts/vits2 800.wav" type="audio/mpeg">
+						</audio>
+					</td>
+					<td>
+						<audio controls>
+							<source src="wavs/tts/our 800.wav" type="audio/mpeg">
+						</audio>
+					</td>
+				</tr>
+				<tr>
+					<td class="system-title">VCTK</td>
+					<td>
+						<audio controls>
+							<source src="wavs/tts/vits2 10  836.wav" type="audio/mpeg">
+						</audio>
+					</td>
+					<td>
+						<audio controls>
+							<source src="wavs/tts/ours_10 836.wav" type="audio/mpeg">
+						</audio>
+					</td>
+				</tr>
 
-		</div>
+			</tbody>
+		</table>
 
 
-	</body>
+
+	</div>
+
+
+</body>
+
 </html>
