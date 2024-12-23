@@ -480,104 +480,118 @@
 	<!-- 第四节 -->
 	<div class="chapter3-2">
 		<h2>4.Comparison of different emotions </h3>
-		<p class="description">
-				We convert 5 emotions from ESD-0001 to ESD-0002 and generate corresponding speech using the emotions of ESD-0001. The TTS text is in Chinese: '你深深地印在我的脑海里.'
-		</p>
+			<p class="description">
+				We convert 5 emotions from ESD-0001 to ESD-0002 and generate corresponding speech using the emotions of ESD-0001.
+				The TTS text is in Chinese: '你深深地印在我的脑海里.'
+			</p>
 
-		<p class="description"><strong>Emotional Speech (ESD-0001):</strong> The real emotion recordings from ESD speaker ID
-			0001<br>
-		</p>
+			<p class="description"><strong>Emotional Speech (ESD-0001):</strong> The real emotion recordings from ESD speaker ID
+				0001<br>
+			</p>
 
-		<table>
-			<thead>
-				<tr>
-					<td colspan="5" style="text-align:center;font-weight:bold">Generated text：你深深地印在我的脑海里。</td>
-				</tr>
-				<tr>
-					<th>Text</th>
-					<th>Emotion</th>
-					<th>Emotional Speech (ESD-0001)</th>
-					<th>W2V</th>
-					<th>E2V</th>
-				</tr>
+			<table>
+				<thead>
+					<tr>
+						<td colspan="5" style="text-align:center;font-weight:bold">Generated text：你深深地印在我的脑海里。</td>
+					</tr>
+					<tr>
+						<th>Text</th>
+						<th>Emotion</th>
+						<th>Emotional Speech (ESD-0001)</th>
+						<th>W2V</th>
+						<th>E2V</th>
+					</tr>
 
-			</thead>
-			<tbody>
+				</thead>
+				<tbody>
 
-				<tr>
-					<td>打远一看，它们的确很是美丽。</td>
-					<td class="system-title">Sad</td>
+					<tr>
+						<td>打远一看，它们的确很是美丽。</td>
+						<td class="system-title">Sad</td>
 
-					<td><audio controls>
-							<source src="wavs/esd002/sad_0001_001051.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/w2v/gen_0002_000371_sad_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/e2v/gen_0002_000371_sad_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-				<tr>
-					<td>姐忙得很，没空和你说这个。</td>
-					<td class="system-title">Angry</td>
+						<td><audio controls>
+								<source src="wavs/esd002/sad_0001_001051.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_sad_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<!-- 老版单个emo的嵌入 
+							<source src="wavs/esd002/e2v/gen_0002_000371_sad_prompt训练集以外的情绪.wav" type="audio/mpeg">-->
+								<!-- 新版两个emo的嵌入 -->
+								<source src="wavs/esd002/2emo/sad.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>姐忙得很，没空和你说这个。</td>
+						<td class="system-title">Angry</td>
 
-					<td><audio controls>
-							<source src="wavs/esd002/angry_0001_000391.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/w2v/gen_0002_000371_angry_wav2vec_prompt_训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/e2v/gen_0002_000371_angry_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-				<tr>
-					<td>没听清，请问什么时间提醒你。</td>
-					<td class="system-title">Surprise</td>
-					<td><audio controls>
-							<source src="wavs/esd002/surprise_0001_001431.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/w2v/gen_0002_000371_surprise_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/e2v/gen_0002_000371_surprise_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-				<tr>
+						<td><audio controls>
+								<source src="wavs/esd002/angry_0001_000391.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_angry_wav2vec_prompt_训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<!-- 老版单个emo的嵌入-->
+								<source src="wavs/esd002/e2v/gen_0002_000371_angry_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
+						<td>没听清，请问什么时间提醒你。</td>
+						<td class="system-title">Surprise</td>
+						<td><audio controls>
+								<source src="wavs/esd002/surprise_0001_001431.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_surprise_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<!-- 老版单个emo的嵌入
+								<source src="wavs/esd002/e2v/gen_0002_000371_surprise_prompt训练集以外的情绪.wav" type="audio/mpeg">-->
+								<!-- 新版两个emo的嵌入 -->
+								<source src="wavs/esd002/2emo/surprise.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+					<tr>
 
-					<td>我们乘船漂游了三峡，真是刺激。</td>
-					<td class="system-title">Happy</td>
-					<td><audio controls>
-							<source src="wavs/esd002/happy_0001_000705.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/w2v/gen_0002_000371_happy_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/e2v/gen_0002_000371_happy_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
+						<td>我们乘船漂游了三峡，真是刺激。</td>
+						<td class="system-title">Happy</td>
+						<td><audio controls>
+								<source src="wavs/esd002/happy_0001_000705.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_happy_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<!-- 老版单个emo的嵌入
+								<source src="wavs/esd002/e2v/gen_0002_000371_happy_prompt训练集以外的情绪.wav" type="audio/mpeg">	-->
+								<!-- 新版两个emo的嵌入 -->
+								<source src="wavs/esd002/2emo/happy.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
 
-				<tr>
-					<td>打远一看，它们的确很是美丽。</td>
-					<td class="system-title">Neutral</td>
+					<tr>
+						<td>打远一看，它们的确很是美丽。</td>
+						<td class="system-title">Neutral</td>
 
-					<td><audio controls>
-							<source src="wavs/esd002/neural_0001_000001.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/w2v/gen_0002_000371_neutral_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-					<td><audio controls>
-							<source src="wavs/esd002/e2v/gen_0002_000371_neutral_prompt训练集以外的情绪.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-			</tbody>
-		</table>
-		<br>
-		<hr />
+						<td><audio controls>
+								<source src="wavs/esd002/neural_0001_000001.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<source src="wavs/esd002/w2v/gen_0002_000371_neutral_wav2vec_prompt训练集以外的情绪.wav" type="audio/mpeg">
+							</audio></td>
+						<td><audio controls>
+								<!-- 老版单个emo的嵌入
+								<source src="wavs/esd002/e2v/gen_0002_000371_neutral_prompt训练集以外的情绪.wav" type="audio/mpeg">-->
+								<!-- 新版两个emo的嵌入 -->
+								<source src="wavs/esd002/2emo/neutral.wav" type="audio/mpeg">
+							</audio></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<hr />
 	</div>
 
 
