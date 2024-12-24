@@ -63,172 +63,148 @@
 
 	<!-- 第一节 -->
 	<div class="chapter1">
-		<h2>1. EMO-2-Label Controllable Comparison</h2>
+		<h2>1. Emotion Label Control (EMO-2-Label)</h2>
 		<p class="description">
-			Influencing the synthesis of emotional speech by mapping emotions to labels and manipulating their values.
+			We used two different label scaling factors to control latent codes (0.5x and 1.0x).
 		</p>
 
 		<table>
 			<thead>
 				<tr>
+					<th>GT</th>
 					<th>Emo Label</th>
-					<th>Text</th>
-					<th>Poor</th>
+					<th>Synthesized Audio(0.5x)</th>
 					<!-- <th>Average</th> -->
-					<th>Normal</th>
+					<th>Synthesized Audio(1.0x)</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td class="system-title">Neutral-0</td>
-					<td>我还不会说其他外语，只会普通话。</td>
-					<td>
-						<audio controls>
-							<source src="wavs/label_control/chinese/poor/0.wav" type="audio/mpeg">
-						</audio>
+					<td rowspan="3">
+						EN: “But one requires the explorer to furnish proofs.”<br>
+						[EN: Audio]
 					</td>
-					<td><audio controls>
-							<source src="wavs/label_control/chinese/normal/0.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-				<tr>
-					<td class="system-title">Neutral-0</td>
-					<td>But one requires the explorer to furnish
-						proofs.</td>
+					<td>Neutral</td>
 					<td>
 						<audio controls>
 							<source src="wavs/label_control/0.3/label_0.wav" type="audio/mpeg">
 						</audio>
-					</td>
-					<!-- <td><audio controls>
-							<source src="wavs/label_control/0.55/label_0.wav" type="audio/mpeg">
-						</audio></td> -->
-					<td><audio controls>
-							<source src="wavs/label_control/正常/label_0.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-
-				<tr>
-					<td class="system-title">Angry-1</td>
-					<td>我还不会说其他外语，只会普通话。</td>
-					<td>
+						<hr>
 						<audio controls>
-							<source src="wavs/label_control/chinese/poor/1.wav" type="audio/mpeg">
+							<source src="wavs/label_control/chinese/poor/0.wav" type="audio/mpeg">
 						</audio>
 					</td>
-					<td><audio controls>
-							<source src="wavs/label_control/chinese/normal/1.wav" type="audio/mpeg">
-						</audio></td>
+					<td>
+						<audio controls>
+							<source src="wavs/label_control/正常/label_0.wav" type="audio/mpeg">
+						</audio>
+						<hr>
+						<audio controls>
+							<source src="wavs/label_control/chinese/normal/0.wav" type="audio/mpeg">
+						</audio>
+
+					</td>
 				</tr>
 
-
 				<tr>
-					<td class="system-title">Angry-1</td>
-					<td>But one requires the explorer to furnish
-						proofs.</td>
+					<td>Angry</td>
 					<td>
 						<audio controls>
 							<source src="wavs/label_control/0.3/label_1.wav" type="audio/mpeg">
 						</audio>
+						<hr>
+						<audio controls>
+							<source src="wavs/label_control/chinese/poor/1.wav" type="audio/mpeg">
+						</audio>
 					</td>
-					<!-- <td><audio controls>
-							<source src="wavs/label_control/0.55/label_1.wav" type="audio/mpeg">
-						</audio></td> -->
-					<td><audio controls>
-							<source src="wavs/label_control/正常/label_1.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
 
-
-				<tr>
-					<td class="system-title">Happy-2</td>
-					<td>我还不会说其他外语，只会普通话。</td>
 					<td>
+						<audio controls>
+							<source src="wavs/label_control/正常/label_1.wav" type="audio/mpeg">
+						</audio>
+						<hr>
+						<audio controls>
+							<source src="wavs/label_control/chinese/normal/1.wav" type="audio/mpeg">
+						</audio>
+					</td>
+				</tr>
+				<tr>
+					<td>Happy</td>
+					<td>
+						<audio controls>
+							<source src="wavs/label_control/0.3/label_2.wav" type="audio/mpeg">
+						</audio>
+						<hr>
 						<audio controls>
 							<source src="wavs/label_control/chinese/poor/2.wav" type="audio/mpeg">
 						</audio>
 					</td>
-					<td><audio controls>
-							<source src="wavs/label_control/chinese/normal/2.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-
-				<tr>
-					<td class="system-title">Happy-2</td>
-					<td>But one requires the explorer to furnish
-						proofs.</td>
-					<td><audio controls>
-							<source src="wavs/label_control/0.3/label_2.wav" type="audio/mpeg">
-						</audio></td>
-					<!-- <td><audio controls>
-							<source src="wavs/label_control/0.55/label_2.wav" type="audio/mpeg">
-						</audio></td> -->
-					<td><audio controls>
-							<source src="wavs/label_control/正常/label_2.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-
-				<tr>
-					<td class="system-title">Sad-3</td>
-					<td>我还不会说其他外语，只会普通话。</td>
 					<td>
+						<audio controls>
+							<source src="wavs/label_control/正常/label_2.wav" type="audio/mpeg">
+						</audio>
+						<hr>
+						<audio controls>
+							<source src="wavs/label_control/chinese/normal/2.wav" type="audio/mpeg">
+						</audio>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td rowspan="2">
+						CN: “我还不会说其他外语，只会普通话。”<br>
+						[CN: Audio]
+					</td>
+					<td>Sad</td>
+					<td>
+						<audio controls>
+							<source src="wavs/label_control/0.3/label_3.wav" type="audio/mpeg">
+						</audio>
+						<hr>
 						<audio controls>
 							<source src="wavs/label_control/chinese/poor/3.wav" type="audio/mpeg">
 						</audio>
 					</td>
-					<td><audio controls>
-							<source src="wavs/label_control/chinese/normal/3.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-
-				<tr>
-					<td class="system-title">Sad-3</td>
-					<td>But one requires the explorer to furnish
-						proofs.</td>
-					<td><audio controls>
-							<source src="wavs/label_control/0.3/label_3.wav" type="audio/mpeg">
-						</audio></td>
-					<!-- <td><audio controls>
-							<source src="wavs/label_control/0.55/label_3.wav" type="audio/mpeg">
-						</audio></td> -->
-					<td><audio controls>
-							<source src="wavs/label_control/正常/label_3.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-
-				<tr>
-					<td class="system-title">Surprise-4</td>
-					<td>我还不会说其他外语，只会普通话。</td>
 					<td>
+						<audio controls>
+							<source src="wavs/label_control/正常/label_3.wav" type="audio/mpeg">
+						</audio>
+						<hr>
+						<audio controls>
+							<source src="wavs/label_control/chinese/normal/3.wav" type="audio/mpeg">
+						</audio>
+					</td>
+				</tr>
+				<tr>
+					<td>Surprise</td>
+					<td>
+
+						<audio controls>
+							<source src="wavs/label_control/0.3/label_4.wav" type="audio/mpeg">
+						</audio>
+						<hr>
 						<audio controls>
 							<source src="wavs/label_control/chinese/poor/4.wav" type="audio/mpeg">
 						</audio>
 					</td>
-					<td><audio controls>
-							<source src="wavs/label_control/chinese/normal/4.wav" type="audio/mpeg">
-						</audio></td>
-				</tr>
-				<tr>
-					<td class="system-title">Surprise-4</td>
-					<td>But one requires the explorer to furnish
-						proofs.</td>
-					<td><audio controls>
-							<source src="wavs/label_control/0.3/label_4.wav" type="audio/mpeg">
-						</audio></td>
-					<!-- <td><audio controls>
-							<source src="wavs/label_control/0.55/label_4.wav" type="audio/mpeg">
-						</audio></td> -->
-					<td><audio controls>
+					<td>
+						<audio controls>
 							<source src="wavs/label_control/正常/label_4.wav" type="audio/mpeg">
-						</audio></td>
+						</audio>
+						<hr>
+						<audio controls>
+							<source src="wavs/label_control/chinese/normal/4.wav" type="audio/mpeg">
+						</audio>
+					</td>
 				</tr>
+
 			</tbody>
 		</table>
 		<br>
 		<hr />
 		<br>
 	</div>
-
 
 	<!-- 第二节 -->
 	<div class="chapter2">
@@ -438,7 +414,61 @@
 
 	<!-- 第三节 -->
 	<div class="chapter3">
-		<h2>3. Ablation Study</h2>
+		<h2>3.TTS Comparison (VITS2 vs. Ours)</h2>
+		<p class="description">
+			A TTS comparison between <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> and our method.
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Datasets</th>
+					<th>VITS2</th>
+					<th>Ours</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td class="system-title">LJSpeech</td>
+					<td>
+						<audio controls>
+							<source src="wavs/tts/vits2 800.wav" type="audio/mpeg">
+						</audio>
+					</td>
+					<td>
+						<audio controls>
+							<source src="wavs/tts/our 800.wav" type="audio/mpeg">
+						</audio>
+					</td>
+				</tr>
+				<tr>
+					<td class="system-title">VCTK</td>
+					<td>
+						<audio controls>
+							<source src="wavs/tts/vits2 10  836.wav" type="audio/mpeg">
+						</audio>
+					</td>
+					<td>
+						<audio controls>
+							<source src="wavs/tts/ours_10 836.wav" type="audio/mpeg">
+						</audio>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<hr>
+		<br>
+	</div>
+
+
+
+
+	<!-- 第四节 -->
+	<div class="chapter4">
+		<h2>4. Ablation Study</h2>
+		<h3>4.1 EMO-2 vs. EMO-2-Label</h3>
 		<p class="description">We conducted a series of ablation experiments on emotion embedding and label control. The TTS
 			text is in Chinese: '最近很冷，风又大。'</p>
 		<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 400px; text-align: center;">
@@ -518,9 +548,9 @@
 		<br>
 	</div>
 
-	<!-- 第3.1节 -->
+	<!-- 第4.1节 -->
 	<div>
-		<h2>Comparison of different emotions </h3>
+		<h3>4.2 Comparison of Pre-trained Models (5 Emotions) </h3>
 			<p class="description">
 				We convert 5 emotions from ESD-0001 to ESD-0002 and generate corresponding speech using the emotions of ESD-0001.
 				The TTS text is in Chinese: '你深深地印在我的脑海里.'
@@ -636,9 +666,9 @@
 			<br>
 	</div>
 
-	<!-- 第3.2节 -->
+	<!-- 第4.2节 -->
 	<div>
-		<h2>Comparison of texts with different lengths</h2>
+		<h3>4.3 Comparison of Pre-trained Models (4 Text Lengths)</h2>
 		<p class="description">
 			In the ESD training dataset, the maximum input character length does not exceed 150, so we extract utterances of
 			varying lengths from the first chapter of 《The Lord of the Rings》to synthesize speech.
@@ -756,58 +786,11 @@
 					</tr>
 				</tbody>
 			</table>
-			<br>
-			<hr />
 		</div>
 	</div>
 
 
-	<div class="chapter4">
-		<h2>4.TTS Comparison</h2>
-		<p class="description">
-			A TTS comparison between <a href="https://github.com/p0p4k/vits2_pytorch">VITS2</a> and our method.
-		</p>
 
-		<table>
-			<thead>
-				<tr>
-					<th>Datasets</th>
-					<th>VITS2</th>
-					<th>Ours</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td class="system-title">LJSpeech</td>
-					<td>
-						<audio controls>
-							<source src="wavs/tts/vits2 800.wav" type="audio/mpeg">
-						</audio>
-					</td>
-					<td>
-						<audio controls>
-							<source src="wavs/tts/our 800.wav" type="audio/mpeg">
-						</audio>
-					</td>
-				</tr>
-				<tr>
-					<td class="system-title">VCTK</td>
-					<td>
-						<audio controls>
-							<source src="wavs/tts/vits2 10  836.wav" type="audio/mpeg">
-						</audio>
-					</td>
-					<td>
-						<audio controls>
-							<source src="wavs/tts/ours_10 836.wav" type="audio/mpeg">
-						</audio>
-					</td>
-				</tr>
-
-			</tbody>
-		</table>
-	</div>
 </body>
 
 </html>
