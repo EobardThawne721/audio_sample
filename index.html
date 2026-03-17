@@ -8,54 +8,54 @@
 	<title>Audio Samples</title>
 	<style>
 		body {
-				font-family: Arial, sans-serif;
-				max-width: 1550px;
-				margin: 0px auto;
-				padding: 20px;
-			}
+			font-family: Arial, sans-serif;
+			max-width: 1550px;
+			margin: 0px auto;
+			padding: 20px;
+		}
 
-			h1,
-			h2 {
-				text-align: center;
-			}
+		h1,
+		h2 {
+			text-align: center;
+		}
 
-			table {
-				width: 100%;
-				border-collapse: collapse;
-				margin-top: 20px;
-				table-layout: fixed;
-			}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+			table-layout: fixed;
+		}
 
-			th,
-			td {
-				padding: 8px 4px;
-				text-align: center;
-				border: 1px solid #ddd;
-			}
+		th,
+		td {
+			padding: 8px 4px;
+			text-align: center;
+			border: 1px solid #ddd;
+		}
 
-			th,
-			td:nth-child(2),
-			td:nth-child(3),
-			td:nth-child(4),
-			td:nth-child(5),
-			td:nth-child(6),
-			td:nth-child(7) {
-				width: 20%;
-			}
+		th,
+		td:nth-child(2),
+		td:nth-child(3),
+		td:nth-child(4),
+		td:nth-child(5),
+		td:nth-child(6),
+		td:nth-child(7) {
+			width: 20%;
+		}
 
-			audio {
-				width: 100%;
-			}
+		audio {
+			width: 100%;
+		}
 
-			.description {
-				font-size: 14px;
-				color: #555;
-				margin-bottom: 10px;
-			}
+		.description {
+			font-size: 14px;
+			color: #555;
+			margin-bottom: 10px;
+		}
 
-			.system-title {
-				font-weight: bold;
-			}
+		.system-title {
+			font-weight: bold;
+		}
 	</style>
 </head>
 
@@ -214,10 +214,12 @@
 
 	<!-- 第二节 -->
 	<div class="chapter2">
-		<h2>2. Emotion Conversion Comparison(ESD-0015)</h2>
+		<!-- <h2>2. Emotion Conversion Comparison(ESD-0015)</h2> -->
+		<h2>2. Emotion Conversion Comparison</h2>
 		<p class="description"><strong>GT :</strong> Ground truth.<br>
 			<strong>MixedEmotion :</strong>Proposed in <a href="https://arxiv.org/abs/2208.05890">this paper</a>.<br>
 			<strong>EmoDiff :</strong> Proposed in <a href="https://arxiv.org/pdf/2211.09496v2.pdf">this paper</a>.<br>
+			<strong>EmoSphere :</strong> Proposed in <a href="https://ieeexplore.ieee.org/iel8/5165369/5520654/10965917.pdf">this paper</a>.<br>
 		</p>
 
 		<table>
@@ -414,6 +416,112 @@
 				</tr>
 			</tbody>
 		</table>
+
+		<!-- 第二个baseline -->
+		<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; table-layout: fixed;">
+			<tr>
+				<th rowspan="2" style="width: 10%;">method</th>
+				<th colspan="3" style="width: 30%;">Happy</th>
+				<th colspan="2" style="width: 20%;">Sad</th>
+				<th style="width: 10%;">Angry</th>
+				<th style="width: 10%;">Surprise</th>
+				<th style="width: 10%;">Neutral</th>
+			</tr>
+			<tr>
+				<!-- 文本描述行 -->
+				<td style="width: 10%; word-wrap: break-word;">They'd never know I'd regular ran away.</td>
+				<td style="width: 10%; word-wrap: break-word;">Take courage all isn't lost yet.</td>
+				<td style="width: 10%; word-wrap: break-word;">This used to be jerrys occupation.</td>
+				<td style="width: 10%; word-wrap: break-word;">She is now choosing skirt to wear.</td>
+				<td style="width: 10%; word-wrap: break-word;">This used to be jerrys occupation.</td>
+				<td style="width: 10%; word-wrap: break-word;">And what are doves. and what are doves.</td>
+				<td style="width: 10%; word-wrap: break-word;">This used to be jerrys occupation.</td>
+				<td style="width: 10%; word-wrap: break-word;">She is now choosing skirt to wear. </td>
+			</tr>
+			<tr>
+				<td>GT</td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/gt/0011_000746.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/gt/0019_000744.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/gt/0013_000733.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/gt/0013_001075.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/gt/0015_001083.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/gt/0012_000372.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/gt/0015_001433.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/gt/0015_000725.wav" type="audio/mpeg">
+					</audio></td>
+			</tr>
+			<tr>
+				<td>EmoSphere</td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/emos/0011_000746.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/emos/0019_000744.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/emos/0013_000733.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/emos/0013_001075.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/emos/0015_001083.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/emos/0012_000372.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/emos/0015_001433.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/emos/0015_000725.wav" type="audio/mpeg">
+					</audio></td>
+			</tr>
+			<tr>
+				<td>Ours</td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/ours/0011_000746.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/ours/0019_000744.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/ours/0013_000733.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/ours/0013_001075.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/ours/0015_001083.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/ours/0012_000372.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/ours/0015_001433.wav" type="audio/mpeg">
+					</audio></td>
+				<td><audio controls>
+						<source src="EmoSphere_Ours/ours/0015_000725.wav" type="audio/mpeg">
+					</audio></td>
+			</tr>
+		</table>
+
+
 		<br>
 		<hr />
 	</div>
@@ -475,10 +583,13 @@
 	<div class="chapter4">
 		<h2>4. Ablation Study</h2>
 		<h3>4.1 EMO-2 vs. EMO-2-Label</h3>
-		<p class="description">We conducted a series of ablation experiments on emotion embedding and label control. The TTS
+		<p class="description">We conducted a series of ablation experiments on emotion embedding and label control. The
+			TTS
 			text is in Chinese: '最近很冷，风又大。'</p>
-		<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 400px; text-align: center;">
-			<img src="wavs/esd002/ablation1/line.png" style="max-width: 100%; max-height: 100%; height: auto; width: auto;" />
+		<div
+			style="display: flex; justify-content: center; align-items: center; width: 100%; height: 400px; text-align: center;">
+			<img src="wavs/esd002/ablation1/line.png"
+				style="max-width: 100%; max-height: 100%; height: auto; width: auto;" />
 		</div>
 		<table>
 			<thead>
@@ -558,11 +669,13 @@
 	<div>
 		<h3>4.2 Comparison of Pre-trained Models (5 Emotions) </h3>
 		<p class="description">
-			We convert 5 emotions from ESD-0001 to ESD-0002 and generate corresponding speech using the emotions of ESD-0001.
+			We convert 5 emotions from ESD-0001 to ESD-0002 and generate corresponding speech using the emotions of
+			ESD-0001.
 			The TTS text is in Chinese: '你深深地印在我的脑海里.'
 		</p>
 
-		<p class="description"><strong>Emotional Speech (ESD-0001):</strong> The real emotion recordings from ESD speaker ID
+		<p class="description"><strong>Emotional Speech (ESD-0001):</strong> The real emotion recordings from ESD
+			speaker ID
 			0001<br>
 		</p>
 
@@ -675,125 +788,133 @@
 	<!-- 第4.2节 -->
 	<div>
 		<h3>4.3 Comparison of Pre-trained Models (4 Text Lengths)</h3>
-			<p class="description">
-				In the ESD training dataset, the maximum input character length does not exceed 150, so we extract utterances of
-				varying lengths from the first chapter of 《The Lord of the Rings》to synthesize speech.
-				By continuously increasing the length of the text, we aim to verify the model's robustness in generating long
-				texts.
+		<p class="description">
+			In the ESD training dataset, the maximum input character length does not exceed 150, so we extract
+			utterances of
+			varying lengths from the first chapter of 《The Lord of the Rings》to synthesize speech.
+			By continuously increasing the length of the text, we aim to verify the model's robustness in generating
+			long
+			texts.
 
-			</p>
+		</p>
 
-			<!--<h3>out-of-domain emotions 1</h3>-->
-			<p class="description">
-				We use fine-tuned <a href="https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim">wav2vec2</a>
-				(W2V) and <a href="https://github.com/ddlBoJack/emotion2vec">emotion2vec</a> (E2V) models to extract out-of-domain
-				emotional features as embeddings features, enabling the model to generate speech with different emotions.
-			</p>
-			<div>
-				<center>
-					<img src="wavs//e2v&w2v/chapter1.jpg" style="width: 350px;height: 400px;" />
-					<img src="wavs//e2v&w2v/pic.jpg" style="width: 350px;height: 400px;" />
-				</center>
+		<!--<h3>out-of-domain emotions 1</h3>-->
+		<p class="description">
+			We use fine-tuned <a
+				href="https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim">wav2vec2</a>
+			(W2V) and <a href="https://github.com/ddlBoJack/emotion2vec">emotion2vec</a> (E2V) models to extract
+			out-of-domain
+			emotional features as embeddings features, enabling the model to generate speech with different emotions.
+		</p>
+		<div>
+			<center>
+				<img src="wavs//e2v&w2v_ablation3/chapter1.jpg" style="width: 350px;height: 400px;" />
+				<img src="wavs//e2v&w2v_ablation3/pic.jpg" style="width: 350px;height: 400px;" />
+			</center>
 
-				<div class="wer-cer-text">
-					<p class="system-title">
-						200 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
-						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
-						his travel"
-					</p>
-					<p class="system-title">
-						400 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
-						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
-						his travels had now become a local legend, and it was popularly believed, whatever the old folk
-						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
-						enough for fame"
-					</p>
-					<p class="system-title">
-						600 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
-						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
-						his travels had now become a local legend, and it was popularly believed, whatever the old folk
-						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
-						enough for fame, there was also his prolonged vigour to marvel at. Time were on, but it seemed to
-						have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they
-						began to call him"
-					</p>
-					<p class="system-title">
-						800 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty years,
-						ever since his remarkable disappearance and unexpected return, The riches he had brought back from
-						his travels had now become a local legend, and it was popularly believed, whatever the old folk
-						might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
-						enough for fame, there was also his prolonged vigour to marvel at. Time were on, but it seemed to
-						have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they
-						began to call him well-preserved, but unchanged would have been nearer the mark. There were some
-						that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone
-						should possess paper"
-					</p>
-				</div>
-				<table>
-					<thead>
-						<tr>
-							<th>Length(chars)</th>
-							<th>W2V</th>
-							<th>E2V</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-							<td class="system-title">200</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v_ablation3/w2v_200.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v_ablation3/e2v_200.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-						<tr>
-							<td class="system-title">400</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v_ablation3/w2v_400.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v_ablation3/e2v_400.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-						<tr>
-							<td class="system-title">600</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v_ablation3/w2v_600.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v_ablation3/e2v_600.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-						<tr>
-							<td class="system-title">800</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v_ablation3/w2v_800.wav" type="audio/mpeg">
-								</audio>
-							</td>
-							<td>
-								<audio controls>
-									<source src="wavs/e2v&w2v_ablation3/e2v_800.wav" type="audio/mpeg">
-								</audio>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="wer-cer-text">
+				<p class="system-title">
+					200 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty
+					years,
+					ever since his remarkable disappearance and unexpected return, The riches he had brought back from
+					his travel"
+				</p>
+				<p class="system-title">
+					400 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty
+					years,
+					ever since his remarkable disappearance and unexpected return, The riches he had brought back from
+					his travels had now become a local legend, and it was popularly believed, whatever the old folk
+					might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
+					enough for fame"
+				</p>
+				<p class="system-title">
+					600 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty
+					years,
+					ever since his remarkable disappearance and unexpected return, The riches he had brought back from
+					his travels had now become a local legend, and it was popularly believed, whatever the old folk
+					might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
+					enough for fame, there was also his prolonged vigour to marvel at. Time were on, but it seemed to
+					have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they
+					began to call him"
+				</p>
+				<p class="system-title">
+					800 chars = " Bilbo was very rich and very peculiar, and had been the wonder of the Shire for sixty
+					years,
+					ever since his remarkable disappearance and unexpected return, The riches he had brought back from
+					his travels had now become a local legend, and it was popularly believed, whatever the old folk
+					might say, that the Hill at Bag End was full of tunnels stuffed with treasure. And if that was not
+					enough for fame, there was also his prolonged vigour to marvel at. Time were on, but it seemed to
+					have little effect on Mr. Baggins. At ninety he was much the same as at fifty. At ninety-nine they
+					began to call him well-preserved, but unchanged would have been nearer the mark. There were some
+					that shook their heads and thought this was too much of a good thing; it seemed unfair that anyone
+					should possess paper"
+				</p>
 			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>Length(chars)</th>
+						<th>W2V</th>
+						<th>E2V</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td class="system-title">200</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v_ablation3/w2v_200.wav" type="audio/mpeg">
+							</audio>
+						</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v_ablation3/e2v_200.wav" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td class="system-title">400</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v_ablation3/w2v_400.wav" type="audio/mpeg">
+							</audio>
+						</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v_ablation3/e2v_400.wav" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td class="system-title">600</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v_ablation3/w2v_600.wav" type="audio/mpeg">
+							</audio>
+						</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v_ablation3/e2v_600.wav" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td class="system-title">800</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v_ablation3/w2v_800.wav" type="audio/mpeg">
+							</audio>
+						</td>
+						<td>
+							<audio controls>
+								<source src="wavs/e2v&w2v_ablation3/e2v_800.wav" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 
